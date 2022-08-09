@@ -6,6 +6,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,12 +14,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        private EditText numOne;
-        private EditText numTwo;
-        private Button plus;
-        private Button minus;
-        private Button times;
-        private Button divide;
+        EditText numOne;
+        EditText numTwo;
+        Button plus;
+        Button minus;
+        Button times;
+        Button divide;
+        TextView result;
+
+        //double a = 1,b = 1,res = 1;
 
         numOne = (EditText) findViewById(R.id.numOne);
         numTwo = (EditText) findViewById(R.id.numTwo);
@@ -26,45 +30,69 @@ public class MainActivity extends AppCompatActivity {
         minus  = (Button)   findViewById(R.id.minus);
         times  = (Button)   findViewById(R.id.times);
         divide = (Button)   findViewById(R.id.divide);
+        result = (TextView) findViewById(R.id.ans);
 
+            plus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        double a = Double.parseDouble(numOne.getText().toString());
+                        double b = Double.parseDouble(numTwo.getText().toString());
+                        double res = a + b;
+                        result.setText(Double.toString(res));
+                    }catch (Exception e)
+                    {
+                        result.setText("Please provide numbers in the inputs");
+                    }
+                }
 
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Editable ed =;
-                num2double(
+            });
 
-            }
+            minus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        double a = Double.parseDouble(numOne.getText().toString());
+                        double b = Double.parseDouble(numTwo.getText().toString());
+                        double res = a - b;
+                        result.setText(Double.toString(res));
+                    }catch (Exception e)
+                    {
+                        result.setText("Please provide numbers in the inputs");
+                    }
+                }
+            });
 
-        });
+            times.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        double a = Double.parseDouble(numOne.getText().toString());
+                        double b = Double.parseDouble(numTwo.getText().toString());
+                        double res = a * b;
+                        result.setText(Double.toString(res));
+                    }catch (Exception e)
+                    {
+                        result.setText("Please provide numbers in the inputs");
+                    }
+                }
+            });
 
-        minus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        times.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        divide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
+            divide.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    try {
+                        double a = Double.parseDouble(numOne.getText().toString());
+                        double b = Double.parseDouble(numTwo.getText().toString());
+                        double res = a / b;
+                        result.setText(Double.toString(res));
+                    }catch (Exception e)
+                    {
+                        result.setText("Please provide numbers in the inputs");
+                    }
+                }
+            });
 
     }
 
-    private double num2double(Editable ed){
-        String str = ed.toString();
-        double number = Double.parseDouble(str);
-        return number;
-    }
 }

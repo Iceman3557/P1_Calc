@@ -8,66 +8,81 @@
 
     <TextView
         android:id="@+id/ans"
-        android:layout_width="368dp"
-        android:layout_height="43dp"
+        android:layout_width="354dp"
+        android:layout_height="45dp"
         android:text="Answer..."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/numOne"
-        android:layout_width="188dp"
-        android:layout_height="39dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="64dp"
         android:ems="10"
+        android:hapticFeedbackEnabled="true"
+        android:hint="number one"
         android:inputType="numberDecimal"
-        android:text="Number One"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintBottom_toTopOf="@+id/minus"
+        app:layout_constraintEnd_toStartOf="@+id/numTwo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/numTwo"
-        android:layout_width="156dp"
-        android:layout_height="43dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:ems="10"
+        android:hint="number two"
         android:inputType="numberDecimal"
-        android:text="Number Two"
-        tools:layout_editor_absoluteX="223dp"
-        tools:layout_editor_absoluteY="174dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/numOne"
+        app:layout_constraintTop_toTopOf="@+id/numOne" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="50dp"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/ans"
+        app:layout_constraintEnd_toStartOf="@+id/minus"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintEnd_toStartOf="@+id/times"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/plus" />
 
     <Button
         android:id="@+id/divide"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:text="/"
-        tools:layout_editor_absoluteX="297dp"
-        tools:layout_editor_absoluteY="236dp" />
-
-    <Button
-        android:id="@+id/plus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/times"
+        app:layout_constraintTop_toTopOf="@+id/times" />
 
     <Button
         android:id="@+id/times"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="*"
-        tools:layout_editor_absoluteX="209dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintEnd_toStartOf="@+id/divide"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/minus"
+        app:layout_constraintTop_toTopOf="@+id/minus" />
 
 </android.support.constraint.ConstraintLayout>
